@@ -1,26 +1,6 @@
-const computerChoice = getComputerChoice()
-let playerChoice = null
-function getComputerChoice() {
-  let random = Math.floor(Math.random() * 3) + 1 
- if (random == 1) {
-    return "rock"
-  } else if (random == 2) {
-    return "paper"
-  } else if (random == 3) {
-    return "scissors"
-  } else {
-    return "error"
-  }
- return random
-//console.log(random)
-
-}
-
-
-
 function round(playerChoice, computerChoice) {
   playerChoice = prompt("Choose between Rock,Paper and Scissors").toLowerCase()
-  console.log(computerChoice)
+  computerChoice = getComputerChoice()
   if (playerChoice === "rock" && computerChoice === "rock") {
     return "tie"
   } else if (playerChoice === "paper" && computerChoice === "paper") {
@@ -44,17 +24,40 @@ function round(playerChoice, computerChoice) {
   }
   
 }
+function getComputerChoice() {
+  let random = ["rock", "paper", "scissors"]
+  
+  let x = Math.floor((Math.random() * random.length)) 
+  
+  return random[x]
+}
+let computerChoice
+let playerChoice
+
+//console.log(round(playerChoice, computerChoice))
+
 function game() {
- 
-  for (let i = 1; i < 3; i++) {
-console.log(getComputerChoice())
-   //console.log(round(playerChoice, computerChoice))
+  for (let i = 0; i < 5; i++) {
+    console.log(round(playerChoice, computerChoice))
   }
 }
 
+game()
 
-console.log(round(playerChoice, computerChoice))
 
-/*console.log(round(playerChoice, computerChoice))
-console.log(round(playerChoice, computerChoice))
-console.log(round(playerChoice, computerChoice))*/
+
+
+// function game() {
+  //getComputerChoice()
+  //   for (let i = 1; i < 3; i++) {
+    // console.log(getComputerChoice())
+//    //console.log(round(playerChoice, computerChoice))
+//   }
+// }
+
+
+// console.log(round(playerChoice, computerChoice))
+
+// console.log(round(playerChoice, computerChoice))
+// console.log(round(playerChoice, computerChoice))
+// console.log(round(playerChoice, computerChoice))
